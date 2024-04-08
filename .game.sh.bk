@@ -1,0 +1,43 @@
+#!/bin/bash
+
+function check_directory {
+	
+
+    x=0
+
+    if [[ $PWD == "/tmp" ]]; then
+        echo "You won"
+        # Add any other commands you want to execute when entering the "/tmp" folder
+    fi
+
+    if [$x -eq 0] && [[ $PWD == "/home/frank/Desktop/powercoders_game/Start_game/left/right" ]]; then
+        echo "You met a monster without a weapon. You died" 
+        cd /home/frank/Desktop/powercoders_game
+        # Add any other commands you want to execute when entering the specified folder
+    else 
+	echo "You have the weapon and You killed the monster!"
+
+    fi
+
+    if [[ $PWD == "/home/frank/Desktop/powercoders_game/Start_game/.find_a_weapon" ]]; then
+        echo "You found a weapon! going back with this weapon!"
+        cd /home/frank/Desktop/powercoders_game
+	x=1
+        # Add any other commands you want to execute when entering the "/tmp/left/right/wait" folder
+    fi  
+	
+	
+
+    if [[ $PWD == "/home/frank/Desktop/powercoders_game/Start_game/left/straight" ]]; then
+        echo "You encounter a trap! You are injuried. Sending you back to start."
+	cd /home/frank/Desktop/powercoders_game
+
+        # Add any other commands you want to execute when entering the "/tmp/left/right/wait" folder
+    fi
+}
+
+function custom_cd {
+    builtin cd "$@" && check_directory
+}
+
+alias cd='custom_cd'

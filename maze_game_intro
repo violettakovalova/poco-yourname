@@ -1,0 +1,7 @@
+This is a maze with monsters. Find you way out of the maze without dying. 
+You will need a weapon and a key to win.
+If you die/ hurt, you are moved to the begining.
+
+rules: use only cd, ls(?), cat
+
+type source game.sh to start
